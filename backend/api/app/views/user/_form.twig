@@ -1,0 +1,44 @@
+<div class="container">
+    <div col-md-6>
+    <div>
+        <h5>Register User</h5>
+    </div>
+    {% if user %}
+    <form class="rd-mailform rd-mailform_responsive" data-form-output="form-output-global" data-form-type="contact"
+        method="post" action="/users/{{ user.id }}">
+        {% else %}
+        <form class="rd-mailform rd-mailform_responsive" data-form-output="form-output-global" data-form-type="contact"
+            method="post" action="/users">
+            {% endif %}
+            <div class="form-wrap form-wrap_icon linear-icon-envelope">
+                {% if quiz %}
+                <input class="form-input" id="username" type="text" name="username" value="{{ user.username }}"
+                    data-constraints=" @Required" />
+                {% else %}
+                <input class="form-input" id="username" type="text" name="username" data-constraints=" @Required" />
+                {% endif %}
+                <label class="form-label" for="username">Your username</label>
+            </div>
+            <div class="form-wrap form-wrap_icon linear-icon-lock">
+                {% if quiz %}
+                <input class="form-input" id="password" type="password" name="password" value="{{ user.password }}"
+                    data-constraints="@Required" />
+                {% else %}
+                <input class="form-input" id="password" type="password" name="password" data-constraints="@Required" />
+                {% endif %}
+                <label class="form-label" for="password">Your password</label>
+            </div>
+            <div class="form-wrap form-wrap_icon linear-icon-lock">
+                {% if quiz %}
+                <input class="form-input" id="password2" type="password" name="password2" value="{{ user.password2 }}"
+                    data-constraints="@Required" />
+                {% else %}
+                <input class="form-input" id="password2" type="password" name="password2"
+                    data-constraints="@Required" />
+                {% endif %}
+                <label class="form-label" for="password2">Confirm password</label>
+            </div>
+            <button class="button button-primary" type="submit">Register</button>
+        </form>
+    </div>
+</div>

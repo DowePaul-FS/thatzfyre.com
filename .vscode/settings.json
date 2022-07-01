@@ -1,11 +1,22 @@
 {
   "cSpell.words": [
+    "browserslist",
     "Caro",
     "cataloggrid",
     "cataloglist",
     "crossorigin",
+    "cssload",
     "gumgum",
+    "hstore",
+    "lightgallery",
+    "mailform",
+    "popularlist",
+    "postbuild",
+    "reactjs",
     "singleproduct",
-    "snackbars"
-  ]
+    "snackbars",
+    "thatzfyre",
+    "yardsale"
+  ],
+  "git.ignoreLimitWarning": true
 }

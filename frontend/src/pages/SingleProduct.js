@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import axios from "../API";
 import Header2 from "../components/header/Header2";
 import About from "../components/about/About";
 import Footer from "../components/footer/Footer";
@@ -11,7 +11,7 @@ const SingleProduct = () => {
   useEffect(() => {
     async function fetchSing() {
       const response = await axios(
-        `/products/${params.id}`,
+        `http://localhost:4000/products/${params.id}`,
         {}
       );
       setSing(response.data);

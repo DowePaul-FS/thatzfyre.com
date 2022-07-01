@@ -1,0 +1,45 @@
+{
+  "name": "thatzfyre_yardsale",
+  "version": "1.0.0",
+  "engine": {
+    "node": "16.14.2"
+  },
+  "description": "node app",
+  "main": "server.js",
+  "scripts": {
+    "dev": "(cd ../frontend && npm run start) & nodemon -e js, twig --watch cd api; server.js",
+    "server": "npm start --prefix api",
+    "client": "npm run start --prefix ../frontend",
+    "start": "npm start --prefix api",
+    "install-frontend": "npm i --prefix ../frontend",
+    "install-backend": "npm i --prefix api",
+    "build-frontend": "npm run build --prefix ../frontend",
+    "build-backend": "npm run db-update --prefix api",
+    "heroku-postbuild": "concurrently \"npm:install-*\"; concurrently \"npm:build-*\";"
+  },
+  "proxy": "http://localhost:4000/",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "querystring": "^0.2.1",
+    "request": "^2.88.2",
+    "sequelize": "^6.18.0",
+    "twig": "^1.15.4",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "concurrently": "^7.2.1",
+    "nodemon": "^1.3.3",
+    "sass": "^1.52.1",
+    "sequelize-cli": "^6.4.1"
+  }
+}
